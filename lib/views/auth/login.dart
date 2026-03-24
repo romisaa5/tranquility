@@ -1,4 +1,5 @@
 import 'package:tranquility/core/utils/common_imports.dart';
+import 'package:tranquility/views/auth/forget_password.dart';
 import 'package:tranquility/views/auth/register.dart';
 import 'package:tranquility/views/auth/widgets/social_button.dart';
 
@@ -64,7 +65,9 @@ class _LoginViewState extends State<LoginView> {
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    AppNavigator.push(context, ForgetPasswordView());
+                  },
                   child: Text(
                     'Forget Password?',
                     style: AppTextStyles.font16Bold.copyWith(
