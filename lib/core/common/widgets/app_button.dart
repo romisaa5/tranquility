@@ -43,10 +43,10 @@ class AppButton extends StatelessWidget {
         height: hight ?? 65.h,
         decoration: BoxDecoration(
           border: isborder
-              ? Border.all(color: borderColor ?? LightAppColors.secondary800)
+              ? Border.all(color: borderColor ?? LightAppColors.primary800)
               : null,
-          borderRadius: BorderRadius.circular(border ?? 60.r),
-          color: color ?? LightAppColors.secondary800,
+          borderRadius: BorderRadius.circular(border ?? 8.r),
+          color: color ?? LightAppColors.primary800,
         ),
         child: isLoading
             ? Center(

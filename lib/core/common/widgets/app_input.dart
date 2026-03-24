@@ -6,7 +6,7 @@ class AppInput extends StatelessWidget {
   final InputBorder? enabledBorder;
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
-  final String? labelText;
+  final String? hintText;
   final bool? isObscureText;
   final Widget? suffixIcon;
   final Color? backgroundColor;
@@ -29,7 +29,7 @@ class AppInput extends StatelessWidget {
     this.enabledBorder,
     this.inputTextStyle,
     this.hintStyle,
-    this.labelText,
+    this.hintText,
     this.isObscureText,
     this.suffixIcon,
     this.backgroundColor,
@@ -54,7 +54,7 @@ class AppInput extends StatelessWidget {
         ? UnderlineInputBorder(
             borderSide: BorderSide(
               color: isBorder
-                  ? LightAppColors.grey600.withValues(alpha: .4)
+                  ? LightAppColors.primary700.withValues(alpha: .3)
                   : Colors.transparent,
               width: 1.w,
             ),
@@ -63,7 +63,7 @@ class AppInput extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.r),
             borderSide: BorderSide(
               color: isBorder
-                  ? LightAppColors.grey600.withValues(alpha: .4)
+                  ? LightAppColors.primary700.withValues(alpha: .3)
                   : Colors.transparent,
               width: 1.w,
             ),
@@ -120,15 +120,17 @@ class AppInput extends StatelessWidget {
                       ),
                     ),
 
-                labelText: labelText,
-                labelStyle:
+                hintText: hintText,
+                hintStyle:
                     hintStyle ??
                     AppTextStyles.font14Regular.copyWith(
                       color: LightAppColors.grey500,
                     ),
                 suffixIcon: suffixIcon,
                 prefixIcon: prefixIcon,
-                fillColor: backgroundColor ?? LightAppColors.background,
+                fillColor:
+                    backgroundColor ??
+                    LightAppColors.primary700.withValues(alpha: .1),
                 filled: true,
               ),
               style:
