@@ -76,6 +76,8 @@ class AppInput extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
+              onTapOutside: (_) => FocusScope.of(context).unfocus(),
+              onEditingComplete: () => FocusScope.of(context).unfocus(),
               keyboardType: keyboardType,
               textAlign: textAlign ?? TextAlign.start,
               maxLines: maxLines ?? 1,
@@ -97,7 +99,7 @@ class AppInput extends StatelessWidget {
                     border.copyWith(
                       borderSide: BorderSide(
                         color: isBorder
-                            ? LightAppColors.secondary800
+                            ? LightAppColors.primary800
                             : Colors.transparent,
                         width: 1.5.w,
                       ),

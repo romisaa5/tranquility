@@ -1,4 +1,5 @@
 import 'package:tranquility/core/utils/common_imports.dart';
+import 'package:tranquility/views/auth/register.dart';
 import 'package:tranquility/views/auth/widgets/social_button.dart';
 
 class LoginView extends StatefulWidget {
@@ -109,7 +110,9 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      AppNavigator.push(context, RegisterView());
+                    },
                     child: Text(
                       'Sign Up',
                       style: AppTextStyles.font16Bold.copyWith(
