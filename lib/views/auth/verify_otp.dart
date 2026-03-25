@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tranquility/core/utils/common_imports.dart';
-import 'package:tranquility/views/auth/change_password.dart';
+import 'package:tranquility/views/auth/reset_password.dart';
 import 'package:tranquility/views/auth/widgets/otp_field.dart';
 
 class VerifyOtpView extends StatefulWidget {
@@ -45,7 +45,7 @@ class _VerifyOtpViewState extends State<VerifyOtpView> {
               AppButton(
                 text: 'Verify',
                 onTap: () {
-                  AppNavigator.push(context, ChangePasswordView());
+                  AppNavigator.push(context, ResetPasswordView());
                 },
               ),
             ],

@@ -1,14 +1,14 @@
 import 'package:tranquility/core/utils/common_imports.dart';
 import 'package:tranquility/views/auth/login.dart';
 
-class ChangePasswordView extends StatefulWidget {
-  const ChangePasswordView({super.key});
+class ResetPasswordView extends StatefulWidget {
+  const ResetPasswordView({super.key});
 
   @override
-  State<ChangePasswordView> createState() => _ChangePasswordViewState();
+  State<ResetPasswordView> createState() => _ResetPasswordViewState();
 }
 
-class _ChangePasswordViewState extends State<ChangePasswordView> {
+class _ResetPasswordViewState extends State<ResetPasswordView> {
   final TextEditingController newPasswordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();

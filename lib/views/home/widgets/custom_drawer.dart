@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:tranquility/core/utils/common_imports.dart';
+import 'package:tranquility/views/about_us.dart';
 import 'package:tranquility/views/home/widgets/drawer_item.dart';
+import 'package:tranquility/views/suggestions.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -61,7 +63,9 @@ class CustomDrawer extends StatelessWidget {
             DrawerItem(
               icon: Icons.info_outline,
               title: "About Us",
-              onTap: () {},
+              onTap: () {
+                AppNavigator.push(context, AboutUsView());
+              },
             ),
             DrawerItem(
               icon: Icons.star_border,
@@ -71,7 +75,9 @@ class CustomDrawer extends StatelessWidget {
             DrawerItem(
               icon: Icons.chat_bubble_outline,
               title: "Suggestions",
-              onTap: () {},
+              onTap: () {
+                AppNavigator.push(context, SuggestionsView());
+              },
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),

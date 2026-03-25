@@ -1,4 +1,7 @@
 import 'package:tranquility/core/utils/common_imports.dart';
+import 'package:tranquility/views/home/pages/chat.dart';
+import 'package:tranquility/views/home/pages/profile.dart';
+import 'package:tranquility/views/home/pages/qoutes.dart';
 import 'package:tranquility/views/home/widgets/custom_drawer.dart';
 
 class HomeView extends StatefulWidget {
@@ -11,12 +14,8 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int _selectedIndex = 0;
 
-  final _pages = [
-    Center(child: Text('Chats Page')),
-    Center(child: Text('Quotes Page')),
-    Center(child: Text('Profile Page')),
-  ];
-
+  final _pages = [ChatPage(), QoutesPage(), ProfilePage()];
+  final _appBarTitles = ['Chats', 'Quotes', 'Profile'];
   Widget buildSvg(String path, bool isSelected) {
     return AppImages(
       imagePath: path,
@@ -32,6 +31,34 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Handle FAB action here
+        },
+        backgroundColor: LightAppColors.primary800,
+        child: AppImages(
+          imagePath: 'chatbot.svg',
+          width: 24.w,
+          height: 24.h,
+          colorFilter: ColorFilter.mode(LightAppColors.grey0, BlendMode.srcIn),
+        ),
+      ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: Icon(Icons.menu, color: LightAppColors.grey900),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
+        title: Text(
+          _appBarTitles[_selectedIndex],
+          style: AppTextStyles.font20SemiBold.copyWith(
+            color: LightAppColors.grey900,
+          ),
+        ),
+      ),
       drawer: const CustomDrawer(),
       body: _pages[_selectedIndex],
       bottomNavigationBar: Container(
