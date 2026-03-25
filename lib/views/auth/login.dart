@@ -2,6 +2,7 @@ import 'package:tranquility/core/utils/common_imports.dart';
 import 'package:tranquility/views/auth/forget_password.dart';
 import 'package:tranquility/views/auth/register.dart';
 import 'package:tranquility/views/auth/widgets/social_button.dart';
+import 'package:tranquility/views/home/view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -98,7 +99,12 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   16.w.pw,
                   Expanded(
-                    child: AppButton(text: 'Login', onTap: () {}),
+                    child: AppButton(
+                      text: 'Login',
+                      onTap: () {
+                        AppNavigator.pushAndRemoveUntil(context, HomeView());
+                      },
+                    ),
                   ),
                 ],
               ),

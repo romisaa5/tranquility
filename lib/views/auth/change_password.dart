@@ -1,4 +1,5 @@
 import 'package:tranquility/core/utils/common_imports.dart';
+import 'package:tranquility/views/auth/login.dart';
 
 class ChangePasswordView extends StatefulWidget {
   const ChangePasswordView({super.key});
@@ -83,7 +84,12 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                 ),
               ),
               24.h.ph,
-              AppButton(text: 'Change Password', onTap: () {}),
+              AppButton(
+                text: 'Change Password',
+                onTap: () {
+                  AppNavigator.pushAndRemoveUntil(context, LoginView());
+                },
+              ),
             ],
           ),
         ),
