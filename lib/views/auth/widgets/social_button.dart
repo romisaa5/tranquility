@@ -28,7 +28,7 @@ class SocialButton extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SvgPicture.asset(imageUrl, height: 50.h, width: 55.h),
+            AppImages(imagePath: imageUrl, width: 24.w, height: 24.h),
             16.w.pw,
             Expanded(
               child: Container(

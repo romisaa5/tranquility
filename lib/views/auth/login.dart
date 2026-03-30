@@ -134,7 +134,7 @@ class _LoginViewState extends State<LoginView> {
 
               SocialButton(
                 text: 'Continue with Google',
-                imageUrl: 'assets/icons/google.svg',
+                imageUrl: 'google.svg',
                 onTap: () {},
                 backgroundColor: Color(0xff35B542).withValues(alpha: .5),
               ),
@@ -142,7 +142,7 @@ class _LoginViewState extends State<LoginView> {
               16.h.ph,
               SocialButton(
                 text: 'Continue with Facebook',
-                imageUrl: 'assets/icons/facebook.svg',
+                imageUrl: 'facebook.svg',
                 onTap: () {},
                 backgroundColor: Color(0xff518EF8).withValues(alpha: .5),
               ),

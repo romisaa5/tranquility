@@ -1,4 +1,5 @@
 import 'package:tranquility/core/utils/common_imports.dart';
+import 'package:tranquility/views/chatbot/start_chat.dart';
 import 'package:tranquility/views/home/pages/chat.dart';
 import 'package:tranquility/views/home/pages/profile.dart';
 import 'package:tranquility/views/home/pages/qoutes.dart';
@@ -33,7 +34,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Handle FAB action here
+          AppNavigator.push(context, StartChatView());
         },
         backgroundColor: LightAppColors.primary800,
         child: AppImages(

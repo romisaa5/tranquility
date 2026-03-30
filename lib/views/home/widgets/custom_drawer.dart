@@ -13,7 +13,7 @@ class CustomDrawer extends StatelessWidget {
       backgroundColor: Colors.transparent,
       child: Container(
         decoration: BoxDecoration(
-          color: LightAppColors.grey100,
+          color: LightAppColors.grey0,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(30.r),
             bottomRight: Radius.circular(30.r),
