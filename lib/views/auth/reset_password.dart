@@ -9,11 +9,16 @@ class ResetPasswordView extends StatefulWidget {
 }
 
 class _ResetPasswordViewState extends State<ResetPasswordView> {
-  final TextEditingController newPasswordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
-      TextEditingController();
-  bool isNewPasswordVisible = false;
-  bool isConfirmPasswordVisible = false;
+  final newPasswordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    newPasswordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,38 +55,12 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 controller: newPasswordController,
                 hintText: 'New Password',
                 isObscureText: true,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isNewPasswordVisible = !isNewPasswordVisible;
-                    });
-                  },
-                  icon: Icon(
-                    isNewPasswordVisible
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                    color: LightAppColors.grey500,
-                  ),
-                ),
               ),
               16.h.ph,
               AppInput(
                 controller: confirmPasswordController,
                 hintText: 'Confirm Password',
                 isObscureText: true,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isConfirmPasswordVisible = !isConfirmPasswordVisible;
-                    });
-                  },
-                  icon: Icon(
-                    isConfirmPasswordVisible
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                    color: LightAppColors.grey500,
-                  ),
-                ),
               ),
               24.h.ph,
               AppButton(

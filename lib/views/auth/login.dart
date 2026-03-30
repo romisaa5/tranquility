@@ -12,9 +12,16 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  bool isPasswordVisible = false;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,17 +57,6 @@ class _LoginViewState extends State<LoginView> {
                 hintText: 'Password',
                 isObscureText: true,
                 maxLines: 1,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isPasswordVisible = !isPasswordVisible;
-                    });
-                  },
-                  icon: Icon(
-                    isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                    color: LightAppColors.grey500,
-                  ),
-                ),
               ),
               24.h.ph,
               Align(

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:tranquility/core/common/widgets/app_dropdown.dart';
 import 'package:tranquility/views/auth/login.dart';
 import 'package:tranquility/views/auth/widgets/upload_image.dart';
@@ -13,16 +12,25 @@ class RegisterView extends StatefulWidget {
 }
 
 class _RegisterViewState extends State<RegisterView> {
-  final TextEditingController usernameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController ageController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
+  final ageController = TextEditingController();
+  final passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
-  bool isPasswordVisible = false;
-  bool isConfirmPasswordVisible = false;
+
   List<String> genderOptions = ['Male', 'Female'];
   String? selectedGender;
+  @override
+  void dispose() {
+    usernameController.dispose();
+    emailController.dispose();
+    ageController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,11 +42,15 @@ class _RegisterViewState extends State<RegisterView> {
               20.h.ph,
               UploadImage(onImageSelected: (String? path) {}),
               40.h.ph,
-              AppInput(hintText: 'Username'),
+              AppInput(hintText: 'Username', controller: usernameController),
               16.h.ph,
-              AppInput(hintText: 'Email'),
+              AppInput(hintText: 'Email', controller: emailController),
               16.h.ph,
-              AppInput(hintText: 'Age', keyboardType: TextInputType.number),
+              AppInput(
+                hintText: 'Age',
+                keyboardType: TextInputType.number,
+                controller: ageController,
+              ),
               16.h.ph,
               AppDropdown<String>(
                 hint: 'Gender',
@@ -55,35 +67,13 @@ class _RegisterViewState extends State<RegisterView> {
               AppInput(
                 hintText: 'Password',
                 isObscureText: true,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isPasswordVisible = !isPasswordVisible;
-                    });
-                  },
-                  icon: Icon(
-                    isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                    color: LightAppColors.grey500,
-                  ),
-                ),
+                controller: passwordController,
               ),
               16.h.ph,
               AppInput(
                 hintText: 'Confirm Password',
                 isObscureText: true,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isConfirmPasswordVisible = !isConfirmPasswordVisible;
-                    });
-                  },
-                  icon: Icon(
-                    isConfirmPasswordVisible
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                    color: LightAppColors.grey500,
-                  ),
-                ),
+                controller: confirmPasswordController,
               ),
               14.h.ph,
               AppButton(text: 'Sign Up', onTap: () {}),
