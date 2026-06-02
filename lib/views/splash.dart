@@ -19,7 +19,7 @@ class _SplashViewState extends State<SplashView> {
   void _navigateToHome() {
     Future.delayed(const Duration(seconds: 5), () {
       if (!mounted) return;
-      AppNavigator.pushAndRemoveUntil(context, OnBoardingView());
+      AppNavigator.pushAndRemoveUntil(OnBoardingView());
     });
   }
 

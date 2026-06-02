@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
 
 class AppNavigator {
-  static Future<T?> push<T>(BuildContext context, Widget page) {
-    return Navigator.push<T>(context, MaterialPageRoute(builder: (_) => page));
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
+
+  static NavigatorState get _navigator => navigatorKey.currentState!;
+
+  static Future<T?> push<T>(Widget page) {
+    return _navigator.push<T>(MaterialPageRoute(builder: (_) => page));
   }
 
-  static Future<T?> pushReplacement<T, TO>(BuildContext context, Widget page) {
-    return Navigator.pushReplacement<T, TO>(
-      context,
+  static Future<T?> pushReplacement<T, TO>(Widget page) {
+    return _navigator.pushReplacement<T, TO>(
       MaterialPageRoute(builder: (_) => page),
     );
   }
 
-  static Future<T?> pushAndRemoveUntil<T>(BuildContext context, Widget page) {
-    return Navigator.pushAndRemoveUntil<T>(
-      context,
+  static Future<T?> pushAndRemoveUntil<T>(Widget page) {
+    return _navigator.pushAndRemoveUntil<T>(
       MaterialPageRoute(builder: (_) => page),
       (route) => false,
     );
   }
 
-  static void pop<T>(BuildContext context, [T? result]) {
-    Navigator.pop(context, result);
+  static void pop<T>([T? result]) {
+    _navigator.pop(result);
   }
 
-  static void popUntil(BuildContext context, String routeName) {
-    Navigator.popUntil(context, ModalRoute.withName(routeName));
+  static void popUntil(String routeName) {
+    _navigator.popUntil(ModalRoute.withName(routeName));
   }
 
-  static Future<bool> maybePop(BuildContext context) {
-    return Navigator.maybePop(context);
+  static Future<bool> maybePop() {
+    return _navigator.maybePop();
   }
 }

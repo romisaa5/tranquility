@@ -34,7 +34,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          AppNavigator.push(context, StartChatView());
+          AppNavigator.push(StartChatView());
         },
         backgroundColor: LightAppColors.primary800,
         child: AppImages(

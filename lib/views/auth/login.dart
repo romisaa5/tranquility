@@ -63,7 +63,7 @@ class _LoginViewState extends State<LoginView> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
-                    AppNavigator.push(context, ForgetPasswordView());
+                    AppNavigator.push(ForgetPasswordView());
                   },
                   child: Text(
                     'Forget Password?',
@@ -98,7 +98,7 @@ class _LoginViewState extends State<LoginView> {
                     child: AppButton(
                       text: 'Login',
                       onTap: () {
-                        AppNavigator.pushAndRemoveUntil(context, HomeView());
+                        AppNavigator.pushAndRemoveUntil(HomeView());
                       },
                     ),
                   ),
@@ -116,7 +116,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   TextButton(
                     onPressed: () {
-                      AppNavigator.push(context, RegisterView());
+                      AppNavigator.push(RegisterView());
                     },
                     child: Text(
                       'Sign Up',

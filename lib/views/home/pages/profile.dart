@@ -63,7 +63,7 @@ class _ProfilePageState extends State<ProfilePage> {
           CupertinoButton(
             padding: EdgeInsets.zero,
             onPressed: () {
-              AppNavigator.push(context, const ChangePasswordView());
+              AppNavigator.push(const ChangePasswordView());
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

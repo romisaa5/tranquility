@@ -64,7 +64,7 @@ class CustomDrawer extends StatelessWidget {
               icon: Icons.info_outline,
               title: "About Us",
               onTap: () {
-                AppNavigator.push(context, AboutUsView());
+                AppNavigator.push(AboutUsView());
               },
             ),
             DrawerItem(
@@ -76,7 +76,7 @@ class CustomDrawer extends StatelessWidget {
               icon: Icons.chat_bubble_outline,
               title: "Suggestions",
               onTap: () {
-                AppNavigator.push(context, SuggestionsView());
+                AppNavigator.push(SuggestionsView());
               },
             ),
             Padding(

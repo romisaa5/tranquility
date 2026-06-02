@@ -89,7 +89,7 @@ class _RegisterViewState extends State<RegisterView> {
                   ),
                   TextButton(
                     onPressed: () {
-                      AppNavigator.push(context, LoginView());
+                      AppNavigator.push(LoginView());
                     },
                     child: Text(
                       'Login',

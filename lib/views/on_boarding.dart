@@ -41,7 +41,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         curve: Curves.easeInOut,
       );
     } else {
-      AppNavigator.pushAndRemoveUntil(context, LoginView());
+      AppNavigator.pushAndRemoveUntil(LoginView());
     }
   }
 
@@ -112,10 +112,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                             duration: const Duration(milliseconds: 500),
                             child: TextButton(
                               onPressed: () {
-                                AppNavigator.pushAndRemoveUntil(
-                                  context,
-                                  LoginView(),
-                                );
+                                AppNavigator.pushAndRemoveUntil(LoginView());
                               },
                               child: Text(
                                 'Skip',

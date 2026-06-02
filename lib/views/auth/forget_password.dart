@@ -46,7 +46,7 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
               AppButton(
                 text: 'Forget Password',
                 onTap: () {
-                  AppNavigator.push(context, VerifyOtpView());
+                  AppNavigator.push(VerifyOtpView());
                 },
               ),
             ],

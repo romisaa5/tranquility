@@ -43,7 +43,7 @@ class StartChatView extends StatelessWidget {
               AppButton(
                 text: 'Start Chatting',
                 onTap: () {
-                  AppNavigator.push(context, ChatView());
+                  AppNavigator.push(ChatView());
                 },
               ),
             ],

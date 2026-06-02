@@ -66,7 +66,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
               AppButton(
                 text: 'Change Password',
                 onTap: () {
-                  AppNavigator.pushAndRemoveUntil(context, LoginView());
+                  AppNavigator.pushAndRemoveUntil(LoginView());
                 },
               ),
             ],
